@@ -10,17 +10,17 @@ namespace lab4
     {
         static void Main(string[] args)
         {
-            Rectangle rec = new Rectangle(new Points(1, 1),new Points(0,1),new Points(0,2),new Points(1,2));
-            
-            InvalidCastException exc = new InvalidCastException();
+            Geom Object = new Geom(new Points(1, 1),new Points(0,1),new Points(0,2),new Points(1,2));
+
+            DivideByZeroException eventus = new DivideByZeroException();
 
             try
             {
-                throw new System.InvalidCastException();
+                throw new DivideByZeroException();
             }
-            catch(System.InvalidCastException)
+            catch(DivideByZeroException)
             {
-                Console.WriteLine(exc.Message);
+                Console.WriteLine(eventus.Message);
             }
         }
     }

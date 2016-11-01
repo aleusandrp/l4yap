@@ -17,44 +17,44 @@ namespace lab4
         public double Y { get; set; }
     }
 
-    delegate void area();
-    delegate void vertex(string s);
+    delegate void Square();
+    delegate void Top(string s);
 
-    class Rectangle
+    class Geom
     {
-        void area()
+        void Square()
         {
-            Console.WriteLine("Событие 1: Площадь равна единице!");
+            Console.WriteLine("Площадь = 1");
         }
 
-        void vertex(string s)
+        void Top(string s)
         {
-            Console.WriteLine("Событие 2:" +s+ " нулевая!");
+            Console.WriteLine(s+ " = 0");
         }
 
-        public event area ar;
-        public event vertex ver;
+        public event Square Squaree;
+        public event Top Topp;
 
 
         private Points vertexOne;
         private Points vertexTwo;
         private Points vertexThree;
-        private Points vertexFour;
+        public Points vertexFour;
 
         public Points VertexOne
         {
             get { return vertexOne; }
             set
             {
-                if (ar != null)
+                if (Squaree != null)
                 {
                     if (value.X == 0) 
-                        ver("Координата X вершины 1");
+                        Topp("X вершины 1");
                     if (value.Y == 0)
-                        ver("Координата Y вершины 1");
+                        Topp("Y вершины 1");
                 }
                 vertexOne = value;
-                CheckArea();
+                CheckSquare();
             }
         }
         public Points VertexTwo
@@ -62,15 +62,15 @@ namespace lab4
             get { return vertexTwo; }
             set
             {
-                if (ar != null)
+                if (Squaree != null)
                 {
                     if (value.X == 0)
-                        ver("Координата X вершины 2");
+                        Topp("X вершины 2");
                     if (value.Y == 0)
-                        ver("Координата Y вершины 2");
+                        Topp("Y вершины 2");
                 }
                 vertexTwo = value;
-                CheckArea();
+                CheckSquare();
             }
         }
         public Points VertexThree
@@ -78,42 +78,38 @@ namespace lab4
             get { return vertexThree; }
             set
             {
-                if (ar != null)
+                if (Squaree != null)
                 {
                     if (value.X == 0)
-                        ver("Координата X вершины 3");
+                        Topp("X вершины 3");
                     if (value.Y == 0)
-                        ver("Координата Y вершины 3"); ;
+                        Topp("Y вершины 3"); ;
                 }
                 vertexThree = value;
-                CheckArea();
+                CheckSquare();
             }
         }
-
         public Points VertexFour
         {
             get { return vertexFour; }
             set
             {
-                if (ar != null)
+                if (Squaree != null)
                 {
                     if (value.X == 0)
-                        ver("Координата X вершины 4");
+                        Topp("X вершины 4");
                     if (value.Y == 0)
-                        ver("Координата Y вершины 4");
+                        Topp("Y вершины 4");
                 }
                 vertexFour = value;
-                CheckArea();
+                CheckSquare();
             }
         }
 
-        public Rectangle()
+        public Geom(Points vertexOne, Points vertexTwo, Points vertexThree, Points vertexFour)
         {
-        }
-        public Rectangle(Points vertexOne, Points vertexTwo, Points vertexThree, Points vertexFour)
-        {
-            ar += area;
-            ver += vertex;
+            Squaree += Square;
+            Topp += Top;
             VertexOne = vertexOne;
             VertexTwo = vertexTwo;
             VertexThree = vertexThree;
@@ -121,20 +117,13 @@ namespace lab4
            
         }
 
-
-        public double CheckArea()
+        public double CheckSquare()
         {
-            double side = Math.Sqrt(Math.Pow(VertexTwo.X - VertexOne.X, 2) + Math.Pow(VertexTwo.Y - VertexOne.Y, 2));
-            double result = Math.Pow(side, 2);
-            if(result==1 && ar != null)
-                ar();
-
+            double result = Math.Pow(Math.Sqrt(Math.Pow(VertexTwo.X - VertexOne.X, 2) + Math.Pow(VertexTwo.Y - VertexOne.Y, 2)), 2);
+            if(result == 1 && Squaree != null)
+                Squaree();
 
             return result;
         }
-
-
-
-
     }
 }

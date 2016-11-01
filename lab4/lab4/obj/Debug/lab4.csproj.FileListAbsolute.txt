@@ -10,3 +10,9 @@ C:\Users\Alex\Documents\GitHub\l4yap\lab4\lab4\obj\Debug\lab4.pdb
 C:\Users\Alex\Documents\GitHub\l4yap\lab4\lab4\bin\Debug\lab4.exe
 C:\Users\Alex\Documents\GitHub\l4yap\lab4\lab4\bin\Debug\lab4.pdb
 C:\Users\Alex\Documents\GitHub\l4yap\lab4\lab4\obj\Debug\lab4.csprojResolveAssemblyReference.cache
+C:\Users\Алекс\Desktop\l4yap\lab4\lab4\bin\Debug\lab4.exe.config
+C:\Users\Алекс\Desktop\l4yap\lab4\lab4\obj\Debug\lab4.exe
+C:\Users\Алекс\Desktop\l4yap\lab4\lab4\obj\Debug\lab4.pdb
+C:\Users\Алекс\Desktop\l4yap\lab4\lab4\bin\Debug\lab4.exe
+C:\Users\Алекс\Desktop\l4yap\lab4\lab4\bin\Debug\lab4.pdb
+C:\Users\Алекс\Desktop\l4yap\lab4\lab4\obj\Debug\lab4.csprojResolveAssemblyReference.cache

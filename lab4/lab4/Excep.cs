@@ -6,22 +6,22 @@ using System.Threading.Tasks;
 
 namespace lab4
 {
-    public delegate void Del();
-    class InvalidCastException:Exception
+    public delegate void Message();
+    class DivideByZeroException : Exception
     {
-        public event Del evt;
+        public event Message mess;
         public void Icast()
         {
-            if (evt != null)
-                evt();
+            if (mess != null)
+                mess();
         }
-        public void mes()
+        public void write()
         {
             Console.WriteLine(Message);
         }  
-        public InvalidCastException()
+        public DivideByZeroException()
         {
-            evt += mes;
+            mess += write;
         }
     }
 }
